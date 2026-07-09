@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Mobile Phlebotomy &amp; Wellness</title>
+<meta name="description" content="Professional mobile phlebotomy and lab collection -- delivered to your home, office, or preferred location.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F1;
+    --cream-alt: #F1ECE1;
+    --sage: #8FA888;
+    --sage-deep: #4F6B52;
+    --charcoal: #1E2420;
+    --teal: #2E6E68;
+    --ink: #2B2E2A;
+    --ink-soft: #5B615C;
+    --white: #FFFFFF;
+    --radius: 14px;
+    --max: 1120px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .script {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  button, .btn {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--sage-deep);
+    color: var(--white);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(79,107,82,0.3); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--sage-deep);
+    border: 1.5px solid var(--sage-deep);
+  }
+  .btn-ghost:hover { background: rgba(79,107,82,0.08); transform: translateY(-2px); }
+
+  .btn-light {
+    background: var(--white);
+    color: var(--charcoal);
+  }
+  .btn-light:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+  :focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,241,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  nav {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--sage-deep);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo .leaf { color: var(--teal); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .nav-links a { opacity: 0.8; transition: opacity 0.15s; }
+  .nav-links a:hover { opacity: 1; }
+
+  .nav-cta { display: none; }
+  @media (min-width: 860px) { .nav-cta { display: inline-flex; } }
+
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    padding: 4px 8px;
+  }
+
+  @media (max-width: 859px) {
+    .nav-links { display: none; }
+    .menu-btn { display: block; }
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 24px 20px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-weight: 500;
+  }
+
+  .hero {
+    padding: 72px 0 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .hero .wrap { grid-template-columns: 1.1fr 0.9fr; }
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+    color: var(--charcoal);
+  }
+  .hero h1 .script { color: var(--sage-deep); display: block; font-size: 1.05em; }
+
+  .hero p.lede {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .hero-note {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .hero-visual {
+    position: relative;
+    border-radius: 28px;
+    background: linear-gradient(160deg, var(--sage) 0%, var(--sage-deep) 100%);
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 55%);
+  }
+  .hero-visual .mark {
+    color: rgba(255,255,255,0.9);
+    width: 46%;
+  }
+
+  .trust {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 22px 0;
+  }
+  .trust .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .trust .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.92;
+  }
+  .trust .item svg { width: 16px; height: 16px; color: var(--sage); flex-shrink: 0; }
+
+  section { padding: 84px 0; }
+  .section-head {
+    max-width: 640px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  .section-head h2 {
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    color: var(--charcoal);
+    margin-top: 10px;
+  }
+  .section-head p {
+    margin-top: 14px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+
+  .flow {
+    position: relative;
+  }
+  .flow-line-wrap {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .flow-svg {
+    position: absolute;
+    top: 34px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    display: none;
+  }
+  @media (min-width: 860px) { .flow-svg { display: block; } }
+
+  .flow-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    position: relative;
+  }
+  @media (min-width: 860px) {
+    .flow-steps { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  }
+
+  .flow-step { text-align: left; }
+  .flow-dot {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .flow-dot svg { width: 28px; height: 28px; color: var(--sage-deep); }
+
+  .flow-step h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .flow-step p { color: var(--ink-soft); font-size: 0.94rem; }
+
+  .services { background: var(--cream-alt); }
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 700px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1000px) {
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(30,36,32,0.08);
+  }
+  .service-card.primary {
+    background: var(--sage-deep);
+    color: var(--cream);
+    border: none;
+  }
+  .service-card.primary h3, .service-card.primary p { color: var(--cream); }
+  .service-card.primary .icon-badge { background: rgba(255,255,255,0.15); color: var(--white); }
+
+  .icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(46,110,104,0.1);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .icon-badge svg { width: 24px; height: 24px; }
+
+  .service-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .service-card p { color: var(--ink-soft); font-size: 0.94rem; }
+
+  .area {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+  .area .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (min-width: 860px) {
+    .area .wrap { grid-template-columns: 1fr 1fr; }
+  }
+  .area h2 { color: var(--cream); font-size: clamp(1.7rem, 3vw, 2.2rem); }
+  .area p { color: rgba(250,247,241,0.75); margin-top: 16px; max-width: 46ch; }
+  .area-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(143,168,136,0.15);
+    color: var(--sage);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .area-visual {
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, rgba(143,168,136,0.18), rgba(46,110,104,0.18));
+    border: 1px solid rgba(255,255,255,0.08);
+    aspect-ratio: 16/11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .area-visual svg { width: 40%; color: var(--sage); opacity: 0.8; }
+
+  .contact .wrap {
+    background: linear-gradient(150deg, var(--sage) 0%, var(--sage-deep) 100%);
+    border-radius: 28px;
+    padding: 64px 40px;
+    text-align: center;
+    color: var(--white);
+  }
+  .contact h2 { color: var(--white); font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+  .contact p { color: rgba(255,255,255,0.88); margin-top: 14px; max-width: 50ch; margin-inline: auto; }
+  .contact-actions {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  footer {
+    background: var(--charcoal);
+    color: rgba(250,247,241,0.7);
+    padding: 48px 0 28px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  @media (min-width: 700px) {
+    .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; }
+  }
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    color: var(--cream);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .footer-col h4 {
+    color: var(--cream);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+  .footer-col a, .footer-col p {
+    display: block;
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+  }
+  .footer-col a:hover { color: var(--sage); }
+  .footer-bottom {
+    padding-top: 22px;
+    font-size: 0.8rem;
+    text-align: center;
+    opacity: 0.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="logo">
+      <svg class="leaf" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 2 6 6 6 10-4 0-8-2-10-6 1-2 2.5-3.2 4-4z"/><path d="M12 21V9"/></svg>
+      Elite Mobile Phlebotomy
+    </a>
+    <div class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#services">Services</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-primary nav-cta">Book Now</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#how">How It Works</a>
+    <a href="#services">Services</a>
+    <a href="#area">Service Area</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Mobile Lab Draws &middot; Licensed &amp; Insured</div>
+        <h1>Professional blood draws,<span class="script">delivered to your door.</span></h1>
+        <p class="lede">Skip the waiting room. Our certified phlebotomist comes to your home, office, or preferred location for fast, private, and precise lab collection.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book Your Appointment</a>
+          <a href="#services" class="btn btn-ghost">Our Services</a>
+        </div>
+        <div class="hero-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          Mobile to your door &mdash; serving [Your City] &amp; surrounding areas
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="mark" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="100" cy="100" r="86"/>
+          <path d="M100 46c14 10 22 26 22 44-16 0-32-8-40-24 4-8 10-15 18-20z" stroke-width="1.6"/>
+          <path d="M100 150V96" stroke-width="1.6"/>
+          <path d="M60 118a44 44 0 0 0 80 0" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap">
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Licensed &amp; Insured</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg> Private &amp; Convenient</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg> Flexible Scheduling</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg> Fast, Reliable Results</div>
+    </div>
+  </div>
+
+  <section id="how" class="flow">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How It Works</div>
+        <h2>From booking to results, in four simple steps</h2>
+        <p>We handle the logistics so you don't have to think twice about lab work.</p>
+      </div>
+
+      <div class="flow-line-wrap">
+        <svg class="flow-svg" viewBox="0 0 100 2" preserveAspectRatio="none">
+          <line x1="0" y1="1" x2="100" y2="1" stroke="var(--sage)" stroke-width="1.2" stroke-dasharray="1 3" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
+            <h3>Send Your Order</h3>
+            <p>Upload your physician's lab order or request securely online.</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
+            <h3>Schedule</h3>
+            <p>Pick a time that works for you &mdash; including evenings and weekends.</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 20l5-5M13 4l7 7-9 9-7-7z"/></svg></div>
+            <h3>We Come To You</h3>
+            <p>Your phlebotomist arrives fully equipped at your location.</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <h3>Get Results</h3>
+            <p>Specimens are delivered to the lab and results follow securely.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our Services</div>
+        <h2>Precise, professional, and private</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-card primary">
+          <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c4 4 7 8.5 7 12a7 7 0 1 1-14 0c0-3.5 3-8 7-12z"/></svg></div>
+          <h3>Mobile Phlebotomy</h3>
+          <p>Physician-ordered blood draws performed safely and professionally at your location.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6l-5 10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1L14 9V3"/></svg></div>
+          <h3>Routine &amp; Specialty Labs</h3>
+          <p>Comprehensive testing panels, hormone, wellness, and diagnostic lab work.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
+          <h3>Pediatric &amp; Geriatric Care</h3>
+          <p>Gentle, patient-focused collection for children, seniors, and those with limited mobility.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h4l2-7 4 14 2-7h4"/></svg></div>
+          <h3>Pre-Surgical &amp; Post-Op Labs</h3>
+          <p>Timely collection to keep your procedure or recovery plan on schedule.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
+          <h3>Corporate &amp; Executive Wellness</h3>
+          <p>On-site testing for businesses, wellness events, and executive health screenings.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c4-3 7-6.5 7-10.5A7 7 0 0 0 5 10.5C5 14.5 8 18 12 21z"/></svg></div>
+          <h3>IV Hydration &amp; Wellness</h3>
+          <p>Add-on hydration and wellness infusions available upon request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area" class="area">
+    <div class="wrap">
+      <div>
+        <div class="area-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Now Booking
+        </div>
+        <h2>Currently serving [Your City] &amp; surrounding areas</h2>
+        <p>Mobile to your door &mdash; we're expanding our coverage area regularly. Not sure if we reach you? Send a message and we'll let you know.</p>
+      </div>
+      <div class="area-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Ready to book your appointment?</h2>
+      <p>Reach out by phone, email, or the button below and we'll get you scheduled at a time that works for you.</p>
+      <div class="contact-actions">
+        <a href="tel:1234567890" class="btn btn-light">Call (123) 456-7890</a>
+        <a href="mailto:hello@elitemobilephleb.com" class="btn btn-ghost" style="border-color:#fff;color:#fff;">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Elite Mobile Phlebotomy &amp; Wellness</div>
+        <p>Precision. Wellness. Excellence.<br>Professional lab collection, delivered to you.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:1234567890">(123) 456-7890</a>
+        <a href="mailto:hello@elitemobilephleb.com">hello@elitemobilephleb.com</a>
+        <p>Serving [Your City] &amp; surrounding areas</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#how">How It Works</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Book Now</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Elite Mobile Phlebotomy &amp; Wellness. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const expanded = mobileMenu.classList.contains('open');
+    menuBtn.setAttribute('aria-expanded', expanded);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
