@@ -40,7 +40,6 @@
   header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(14,122,108,0.1); }
   nav { max-width: var(--max); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
   .logo { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: var(--teal-deep); display: flex; align-items: center; gap: 10px; }
-  .logo img { width: 40px; height: 40px; object-fit: contain; }
   .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
   .nav-links a { opacity: 0.75; transition: opacity 0.15s; }
   .nav-links a:hover { opacity: 1; color: var(--teal-deep); }
@@ -60,8 +59,12 @@
   .hero p.lede { margin-top: 20px; font-size: 1.1rem; color: var(--ink-soft); max-width: 46ch; }
   .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
   .hero-note { margin-top: 22px; display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--ink-soft); font-weight: 500; }
-  .hero-visual { position: relative; border-radius: 28px; background: var(--teal-deep); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; padding: 8%; }
-  .hero-visual img { width: 100%; height: auto; border-radius: 12px; }
+  .hero-visual { position: relative; border-radius: 28px; background: linear-gradient(150deg, var(--teal) 0%, var(--teal-deep) 100%); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; padding: 12%; text-align: center; }
+  .wordmark-eyebrow { color: rgba(255,255,255,0.85); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 18px; }
+  .wordmark { font-family: 'Fraunces', serif; color: var(--white); font-size: clamp(2.2rem, 6vw, 3rem); font-weight: 600; letter-spacing: 0.03em; line-height: 1.05; }
+  .wordmark-sub { margin-top: 14px; color: rgba(255,255,255,0.92); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .wordmark-rule { width: 56px; height: 2px; background: rgba(255,255,255,0.6); margin: 22px auto; border-radius: 2px; }
+  .wordmark-tag { color: rgba(255,255,255,0.78); font-size: 0.8rem; letter-spacing: 0.06em; }
   .trust { background: var(--cream-alt); padding: 22px 0; }
   .trust .wrap { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; color: var(--teal-deep); }
   .trust .item { display: flex; align-items: center; gap: 8px; }
@@ -120,10 +123,7 @@
 
 <header>
   <nav>
-    <a href="#top" class="logo">
-      <img src="IMG_0214.jpeg" alt="Elite Lab Draws logo">
-      Elite Lab Draws
-    </a>
+    <a href="#top" class="logo">Elite Lab Draws</a>
     <div class="nav-links">
       <a href="#how">How It Works</a>
       <a href="#services">Services</a>
@@ -158,7 +158,13 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img src="IMG_0214.jpeg" alt="Elite Lab Draws — Your one stick specialist">
+        <div>
+          <div class="wordmark-eyebrow">Mobile Lab Draw &amp; Wellness</div>
+          <div class="wordmark">ELITE</div>
+          <div class="wordmark-sub">Lab Draws</div>
+          <div class="wordmark-rule"></div>
+          <div class="wordmark-tag">Your One Stick Specialist</div>
+        </div>
       </div>
     </div>
   </section>
