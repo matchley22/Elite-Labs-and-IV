@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>Elite Mobile Phlebotomy &amp; Wellness</title>
-<meta name="description" content="Professional mobile phlebotomy and lab collection -- delivered to your home, office, or preferred location.">
+<title>Elite Lab Draws</title>
+<meta name="description" content="Professional mobile phlebotomy and lab collection — delivered to your home, office, or preferred location.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,6 @@
     --radius: 14px;
     --max: 1120px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; color-scheme: light; }
   body { font-family: 'Work Sans', sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -30,13 +29,7 @@
   a { color: inherit; text-decoration: none; }
   img, svg { display: block; max-width: 100%; }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-
-  button, .btn {
-    font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 0.95rem;
-    cursor: pointer; border: none; border-radius: 999px; padding: 14px 28px;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  }
+  button, .btn { font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; border-radius: 999px; padding: 14px 28px; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease; }
   .btn-primary { background: var(--teal-deep); color: var(--white); }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14,122,108,0.3); }
   .btn-ghost { background: transparent; color: var(--teal-deep); border: 1.5px solid var(--teal-deep); }
@@ -44,11 +37,10 @@
   .btn-light { background: var(--white); color: var(--teal-deep); }
   .btn-light:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
   :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
-
   header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(14,122,108,0.1); }
-  nav { max-width: var(--max); margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+  nav { max-width: var(--max); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
   .logo { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: var(--teal-deep); display: flex; align-items: center; gap: 10px; }
-  .logo .leaf { color: var(--teal); }
+  .logo img { width: 40px; height: 40px; object-fit: contain; }
   .nav-links { display: flex; gap: 32px; font-size: 0.92rem; font-weight: 500; }
   .nav-links a { opacity: 0.75; transition: opacity 0.15s; }
   .nav-links a:hover { opacity: 1; color: var(--teal-deep); }
@@ -59,7 +51,6 @@
   .mobile-menu { display: none; flex-direction: column; gap: 4px; padding: 0 24px 20px; }
   .mobile-menu.open { display: flex; }
   .mobile-menu a { padding: 12px 0; border-bottom: 1px solid rgba(14,122,108,0.1); font-weight: 500; }
-
   .hero { padding: 72px 0 56px; position: relative; overflow: hidden; }
   .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
   @media (min-width: 900px) { .hero .wrap { grid-template-columns: 1.1fr 0.9fr; } }
@@ -69,32 +60,16 @@
   .hero p.lede { margin-top: 20px; font-size: 1.1rem; color: var(--ink-soft); max-width: 46ch; }
   .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
   .hero-note { margin-top: 22px; display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--ink-soft); font-weight: 500; }
-
-  .hero-visual {
-    position: relative;
-    border-radius: 28px;
-    background: linear-gradient(155deg, var(--teal) 0%, var(--teal-deep) 100%);
-    aspect-ratio: 4/5;
-    display: flex; align-items: center; justify-content: center;
-    padding: 12%;
-    text-align: center;
-  }
-  .wordmark-eyebrow { color: rgba(255,255,255,0.85); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 18px; }
-  .wordmark { font-family: 'Fraunces', serif; color: var(--white); font-size: clamp(2.2rem, 6vw, 3rem); font-weight: 600; letter-spacing: 0.03em; line-height: 1.05; }
-  .wordmark-sub { margin-top: 14px; color: rgba(255,255,255,0.92); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-  .wordmark-rule { width: 56px; height: 2px; background: rgba(255,255,255,0.6); margin: 22px auto; border-radius: 2px; }
-  .wordmark-tag { color: rgba(255,255,255,0.78); font-size: 0.8rem; letter-spacing: 0.06em; }
-
+  .hero-visual { position: relative; border-radius: 28px; background: var(--cream); border: 1px solid rgba(14,122,108,0.12); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; padding: 10%; }
+  .hero-visual img { width: 100%; height: auto; }
   .trust { background: var(--cream-alt); padding: 22px 0; }
   .trust .wrap { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; color: var(--teal-deep); }
   .trust .item { display: flex; align-items: center; gap: 8px; }
   .trust .item svg { width: 16px; height: 16px; color: var(--teal-deep); flex-shrink: 0; }
-
   section { padding: 84px 0; }
   .section-head { max-width: 640px; margin: 0 auto 56px; text-align: center; }
   .section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); color: var(--ink); margin-top: 10px; }
   .section-head p { margin-top: 14px; color: var(--ink-soft); font-size: 1.02rem; }
-
   .flow-line-wrap { position: relative; max-width: 980px; margin: 0 auto; }
   .flow-svg { position: absolute; top: 34px; left: 0; width: 100%; height: 2px; display: none; }
   @media (min-width: 860px) { .flow-svg { display: block; } }
@@ -105,7 +80,6 @@
   .flow-dot svg { width: 28px; height: 28px; color: var(--teal-deep); }
   .flow-step h3 { font-size: 1.08rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
   .flow-step p { color: var(--ink-soft); font-size: 0.94rem; }
-
   .services { background: var(--cream); }
   .service-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
   @media (min-width: 700px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -119,7 +93,6 @@
   .icon-badge svg { width: 24px; height: 24px; }
   .service-card h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
   .service-card p { color: var(--ink-soft); font-size: 0.94rem; }
-
   .area { background: var(--cream-alt); }
   .area .wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
   @media (min-width: 860px) { .area .wrap { grid-template-columns: 1fr 1fr; } }
@@ -128,12 +101,10 @@
   .area-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(31,175,160,0.14); color: var(--teal-deep); padding: 8px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 18px; }
   .area-visual { border-radius: var(--radius); background: linear-gradient(150deg, var(--teal) 0%, var(--teal-deep) 100%); aspect-ratio: 16/11; display: flex; align-items: center; justify-content: center; }
   .area-visual svg { width: 34%; color: var(--white); opacity: 0.95; }
-
   .contact .wrap { background: linear-gradient(150deg, var(--teal) 0%, var(--teal-deep) 100%); border-radius: 28px; padding: 64px 40px; text-align: center; color: var(--white); }
   .contact h2 { color: var(--white); font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
   .contact p { color: rgba(255,255,255,0.9); margin-top: 14px; max-width: 50ch; margin-inline: auto; }
   .contact-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
-
   footer { background: var(--white); color: var(--ink-soft); padding: 48px 0 28px; border-top: 1px solid rgba(14,122,108,0.12); }
   .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(14,122,108,0.12); }
   @media (min-width: 700px) { .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; } }
@@ -142,7 +113,6 @@
   .footer-col a, .footer-col p { display: block; font-size: 0.92rem; margin-bottom: 10px; }
   .footer-col a:hover { color: var(--teal); }
   .footer-bottom { padding-top: 22px; font-size: 0.8rem; text-align: center; opacity: 0.7; }
-
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
@@ -151,8 +121,8 @@
 <header>
   <nav>
     <a href="#top" class="logo">
-      <svg class="leaf" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 2 6 6 6 10-4 0-8-2-10-6 1-2 2.5-3.2 4-4z"/><path d="M12 21V9"/></svg>
-      Elite Mobile Phlebotomy
+      <img src="IMG_0207.jpeg" alt="Elite Lab Draws logo">
+      Elite Lab Draws
     </a>
     <div class="nav-links">
       <a href="#how">How It Works</a>
@@ -187,15 +157,8 @@
           Mobile to your door &mdash; serving [Your City] &amp; surrounding areas
         </div>
       </div>
-
       <div class="hero-visual">
-        <div>
-          <div class="wordmark-eyebrow">Mobile Lab Draw &amp; Wellness</div>
-          <div class="wordmark">ELITE</div>
-          <div class="wordmark-sub">Mobile Phlebotomy</div>
-          <div class="wordmark-rule"></div>
-          <div class="wordmark-tag">Precision &middot; Wellness &middot; Excellence</div>
-        </div>
+        <img src="IMG_0207.jpeg" alt="Elite Lab Draws — Your one stick specialist">
       </div>
     </div>
   </section>
@@ -319,8 +282,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">Elite Mobile Phlebotomy &amp; Wellness</div>
-        <p>Precision. Wellness. Excellence.<br>Professional lab collection, delivered to you.</p>
+        <div class="footer-logo">Elite Lab Draws</div>
+        <p>Your one stick specialist.<br>Professional lab collection, delivered to you.</p>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -335,7 +298,7 @@
         <a href="#contact">Book Now</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Elite Mobile Phlebotomy &amp; Wellness. All rights reserved.</div>
+    <div class="footer-bottom">&copy; 2026 Elite Lab Draws. All rights reserved.</div>
   </div>
 </footer>
 
